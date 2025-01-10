@@ -19,7 +19,6 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/stock' element={<Stocks/>} />
         <Route path='/outs' element={<OutList/>} />
-        {/* <Route path='item_stock' element={<ItemStock/>} /> */}
       </Routes>
       <ToastContainer />
     </div>

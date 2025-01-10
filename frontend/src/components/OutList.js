@@ -19,9 +19,7 @@ function OutList() {
             <th>#</th>
             <th>Name</th>
             <th>Quantity</th>
-            <th>
-              Date Removed
-            </th>
+            <th>Date Removed</th>
           </tr>
         </thead>
         <tbody>
