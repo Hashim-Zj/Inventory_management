@@ -11,7 +11,9 @@ const EditItem = ({ id }) => {
     has_expiry: false,
     has_entry_number: false
   });
+  const valid="Hi......."
 
+console.log(id);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -45,7 +47,7 @@ const EditItem = ({ id }) => {
 
   };
   return (
-    <div>
+    <>
       <button className="dropdown-item text-info" onClick={handleShow}>
         Edit
       </button>
@@ -111,7 +113,7 @@ const EditItem = ({ id }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   );
 }
 

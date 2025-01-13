@@ -12,14 +12,14 @@ function OutList() {
     }).catch((error) => console.error(error));
   }, []);
   return (
-    <div>
+    <div className='mx-5 mt-5'>
       <Table striped bordered hover>
         <thead>
-          <tr>
-            <th>#</th>
+          <tr className='table-primary'>
+            <th>Si no:</th>
             <th>Name</th>
             <th>Quantity</th>
-            <th>Date Removed</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>

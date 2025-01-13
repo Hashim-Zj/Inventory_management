@@ -4,7 +4,6 @@ import { deleteItem, listItems } from "../Apis/feachApi";
 import AddItem from "./AddItem";
 import EditItem from "./EditItem";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import ItemStock from "./ItemStock";
 import AddPurchase from "./AddPurchase";
 
@@ -33,12 +32,12 @@ function Home() {
       <section className="w-75 mt-2 m-auto">
         {items.length > 0 ? (
           <>
-            <h3>Inventory Items</h3>
-            <AddItem />
+            <h3 className="d-flex justify-content-between align-items-center" >Inventory Items   <AddItem /></h3>
+            <hr className="mt-0"></hr>
             <Table striped bordered hover>
               <thead>
-                <tr>
-                  <th>#</th>
+                <tr className="table-primary">
+                  <th>SI No:</th>
                   <th>Name</th>
                   <th>Description</th>
                   <th>Total Stock</th>
@@ -55,8 +54,13 @@ function Home() {
                       <td>{res.item_name}</td>
                       <td>{res.description}</td>
                       <td>{res.total_stock}</td>
-                      <td>{res.has_expiry ? "Yes" : "No"}</td>
-                      <td>{res.has_entry_number ? "Yes" : "No"}</td>
+                      <td className="text-center fs-5 fw-bold" style={{ color: res.has_expiry ? "green" : "red" }}>
+                        {res.has_expiry ? "✓" : "✗"}
+                      </td>
+                      <td className="text-center fs-5 fw-bold" style={{ color: res.has_entry_number ? "green" : "red" }}>
+                        {res.has_entry_number ? "✓" : "✗"}
+                      </td>
+
                       <td className="d-flex justify-content-between">
                         <div className="dropdown">
                           <button
@@ -66,7 +70,7 @@ function Home() {
                             data-bs-toggle="dropdown"
                             aria-expanded="true"
                           >
-                            Actions
+                            Options
                           </button>
                           <ul
                             className="dropdown-menu"
